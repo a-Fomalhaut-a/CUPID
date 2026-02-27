@@ -32,7 +32,8 @@ train_opt = {
 The notebook `CUPID.ipynb` demonstrates the testing of the AUC metric on the uncertainty estimated by CUPID.
 
 ## TODO
-- [ ] Add a full training pipeline:
+- [ ] Add a full training pipeline
+
 
 
 
