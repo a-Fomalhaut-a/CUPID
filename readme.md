@@ -19,7 +19,7 @@ data_all = {
     },
 }
 ```
-2. Specify the path of the pretrained model in `train_opt`. The provided pretrained model is saved in `save_model_GLV2/GLV2_model_mainlast_insert`.
+2. Specify the path of the pretrained model in `train_opt`. The provided pretrained model is saved as `save_model_GLV2/pretrain_GLV2_model_mainlast_insert` in link "https://drive.google.com/drive/folders/1U3vQiQwp3bnBeJhQL6tTHw_tUTiSZO1n?usp=drive_link".
 ```
 train_opt = {
     'savedir': 'save_model_{}/'.format(datanow),    # predicted results save dir
@@ -33,6 +33,7 @@ The notebook `CUPID.ipynb` demonstrates the testing of the AUC metric on the unc
 
 ## TODO
 - [ ] Add a full training pipeline:
+
 
 
 
