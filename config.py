@@ -1,11 +1,11 @@
  
-datanow = 'EyePACS'
+datanow = 'GLV2'
 modelnow = 'res18_cnn'
 insertnow = 'CUPID'
 
 data_all = {
-    'EyePACS': {
-        'name': 'EyePACS',
+    'GLV2': {
+        'name': 'GLV2',
         'initial_data_road': '',    # path of dataset
         'fea_dim':  [512,512],
         'lab_dim': 2,
