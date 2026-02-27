@@ -2,7 +2,7 @@
 from config import modelnow, datanow,insertnow, model_info,insert_model
 from node_model.res18_cnn import nres18_cnn
 from insert_model import CUPID
-from data_pre import EyePACS
+from data_pre import GLV2
 
 
 def detemine_model(which_model = modelnow):
@@ -22,8 +22,8 @@ def determine_insert_model(which_model = insertnow):
         print("no insert model exist")
 
 def determine_data(which_data = datanow):
-    if which_data == 'EyePACS':
-        dataset = EyePACS.preprocess()
+    if which_data == 'GLV2':
+        dataset = GLV2.preprocess()
         return dataset
     else:
         print("no dataset exist")
