@@ -16,7 +16,7 @@ class AddNoise(object):
 
 
 # Applying Transforms to the Data
-para = data_all['EyePACS']
+para = data_all['GLV2']
 SIZE = para['fea_dim']
 COLOR_DEVIATION = 0.01
 root = para['initial_data_road']
