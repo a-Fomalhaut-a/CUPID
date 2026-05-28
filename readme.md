@@ -2,6 +2,8 @@
 
 Code for "CUPID: A Plug-in Framework for Joint Aleatoric and Epistemic Uncertainty Estimation with a Single Model".
 
+This paper has been accepted by ICLR 2026. The paper is available at [https://arxiv.org/pdf/2603.10745](https://arxiv.org/pdf/2603.10745).
+
 ## Getting Started
 The `config.py` file contains the experiment settings for CUPID. To run `test.py`, please first complete the following settings in `config.py`:
 
@@ -31,8 +33,53 @@ train_opt = {
 ## Test the CUPID Model
 The notebook `CUPID.ipynb` demonstrates the testing of the AUC metric on the uncertainty estimated by CUPID.
 
-## TODO
-- [ ] Add a full training pipeline
+## Train the CUPID Model
+The training settings are saved in `config_train.py`. Before running `train.py`, please first set the dataset path in `config.py`:
+
+```
+data_all = {
+    'GLV2': {
+        'name': 'GLV2',
+        'initial_data_road': '',    # path of dataset
+        'fea_dim':  [512,512],
+        'lab_dim': 2,
+        'trainnum': 4000*2,
+        'testnum': 385*2,
+        'valnum': 385*2,
+    },
+}
+```
+
+To train the base classification model and then train the CUPID insert module, run:
+
+```
+python train.py
+```
+
+By default, `train.py` runs:
+
+```
+train_only_main(SDR)
+train_include_insert(SDR)
+```
+
+The trained models and log file will be saved under `save_model_GLV2/`.
+
+If you already have a pretrained base model and only want to train the CUPID insert module, set the following options in `config_train.py`:
+
+```
+'i_pretrainflag': True,
+'i_pretrain_savedir': 'path/to/pretrained/base/model',
+```
+
+Then edit the bottom of `train.py` as follows:
+
+```
+# train_only_main(SDR)
+train_include_insert(SDR)
+```
+
+In this mode, CUPID loads the matching base model parameters and trains only the insert module.
 
 
 
